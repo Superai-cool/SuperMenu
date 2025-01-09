@@ -14,21 +14,17 @@ else:
     # User input: Dish name
     dish_name = st.text_input("Enter the name of the dish:")
 
-    # User input: Ingredients (optional)
-    ingredients = st.text_area("Enter the list of ingredients (optional):", height=100)
-
     # Generate description button
     if st.button("Generate Description"):
         if dish_name.strip():
             # Function to generate food dish description
-            def generate_dish_description(api_key, dish_name, ingredients):
+            def generate_dish_description(api_key, dish_name):
                 """
                 Generates a concise and engaging description for the given dish.
 
                 Parameters:
                     api_key (str): OpenAI API key.
                     dish_name (str): The name of the dish.
-                    ingredients (str): Optional ingredients list.
 
                 Returns:
                     str: A formatted description for the dish.
@@ -41,12 +37,8 @@ else:
                     "Responses must be formatted as follows: \n"
                     "**Dish Name:** followed by the name, and **Description:** followed by the text. \n"
                     f"Dish Name: {dish_name}\n"
+                    "Write the description:"
                 )
-
-                if ingredients.strip():
-                    prompt += f"Ingredients: {ingredients}\n"
-
-                prompt += "Write the description:"
 
                 try:
                     response = openai.ChatCompletion.create(
@@ -65,7 +57,7 @@ else:
                     return f"Error generating description: {str(e)}"
 
             # Generate and display the description
-            description = generate_dish_description(api_key, dish_name, ingredients)
+            description = generate_dish_description(api_key, dish_name)
             st.subheader("Generated Description:")
             st.write(description)
         else:
