@@ -60,6 +60,6 @@ else:
             # Generate and display the description
             description = generate_dish_description(api_key, dish_name)
             st.subheader("Generated Description:")
-            st.write(f"Dish Name - {dish_name}\nDescription - {description}")
+            st.write(f"**Dish Name**\n{dish_name}\n\n**Description**\n{description}")
         else:
             st.error("Dish name cannot be empty. Please enter a dish name.")
