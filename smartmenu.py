@@ -5,22 +5,6 @@ import os
 # Streamlit app title
 st.title("Welcome to Food Dish Description Expert")
 
-# Introduction and examples
-st.write(
-    """This GPT is a Food Dish Description Expert, providing concise and highly accurate descriptions of food dishes. 
-    Descriptions are limited to 250 characters and highlight the main ingredients, flavor profile, or cultural essence of the dish.
-
-    ### Examples:
-    **Dish Name:** Paneer Butter Masala  
-    **Description:** A creamy North Indian curry featuring soft paneer cubes simmered in a rich, velvety tomato-based gravy infused with butter, aromatic spices, and a hint of sweetness. Perfect with naan or basmati rice for a flavorful, comforting meal.
-
-    **Dish Name:** Sushi  
-    **Description:** Delicate Japanese dish featuring vinegared rice paired with fresh seafood, vegetables, or egg, often wrapped in seaweed. Balanced flavors and textures celebrate the art of simplicity.
-
-    Use this tool to create engaging menu descriptions, enhance food blogs, or craft mouthwatering food captions. Provide the dish name and optional ingredients below, then click "Generate Description" to get started!
-    """
-)
-
 # Fetch the API key from environment variables
 api_key = os.getenv("OPENAI_API_KEY")
 
