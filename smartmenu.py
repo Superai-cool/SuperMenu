@@ -43,7 +43,7 @@ else:
 
                 try:
                     response = openai.ChatCompletion.create(
-                        model="gpt-4o mini",
+                        model="gpt-4omini",
                         messages=[
                             {"role": "system", "content": "You are an expert at generating food dish descriptions."},
                             {"role": "user", "content": prompt}
