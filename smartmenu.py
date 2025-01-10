@@ -58,6 +58,3 @@ else:
         st.markdown("### **Dish Description**")
         st.markdown(f"**Dish Name:** {dish_name}")
         st.markdown(f"**Description:** {description}")
-
-    else:
-        st.info("Please enter a dish name to generate a description.")
